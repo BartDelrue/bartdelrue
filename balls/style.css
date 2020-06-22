@@ -1,0 +1,151 @@
+:root {
+    --text-color: #FFFFFF;
+    --shadow-color: #000000;
+}
+html {
+    height: 100%;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+*:focus {
+    outline: 2px dotted var(--text-color);
+    outline-offset: 5px;
+}
+
+.page-wrap {
+    color: var(--text-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+.intro {
+    text-shadow: 0px 0px 2px var(--shadow-color);
+    font-size: 6vw;
+    line-height: 3.5rem;
+    font-variant: all-petite-caps;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+
+.intro > h1 > span {
+    display: block;
+}
+
+.intro > h1 > span:nth-child(2) {
+    font-size: 1.7em;
+    line-height: 0.7em;
+    letter-spacing: -0.05em;
+}
+
+.intro > h1 > span:nth-child(3) {
+    font-size: 0.75em;
+}
+
+.main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+
+.footer {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.footer a, .footer a:visited {
+    color: inherit;
+    padding: 0 1em;
+}
+
+.controls {
+    border: 2px solid var(--text-color);
+    box-shadow: 1px 1px 1px var(--text-color);
+    border-radius: 5px;
+    margin: 3rem 2rem;
+    padding: 2rem;
+    font-variant: all-petite-caps;
+}
+
+input[type="range"] {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.circle, .base {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border: 0;
+    border-bottom: 2px solid var(--text-color);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.circle:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.circle > div,
+.base > div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+
+button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    padding: 20px 40px;
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+    font-variant: all-small-caps;
+}
+
+button.small {
+    margin-top: 2rem;
+    padding: 10px 20px;
+}
+
+button:hover,
+button:focus {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.css {
+    margin: 3rem 2rem;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    min-height: 8rem;
+}
