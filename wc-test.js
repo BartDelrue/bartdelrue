@@ -813,16 +813,23 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=029975a5&shadow
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.theme},[_c('ul',{staticClass:"grid-3"},_vm._l((_vm.items),function(ref){
+// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=25dba6c8&shadow
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.theme},[_c('ul',{ref:"grid",staticClass:"grid-3",attrs:{"tabindex":"-1"}},_vm._l((_vm.items),function(ref,index){
 var fields = ref.fields;
-return _c('li',{key:fields.uuid,staticClass:"teaser"},[_c('article',{staticClass:"teaser-content"},[_c('div',{staticClass:"content__second"},[_c('h3',[_vm._v(_vm._s(fields.name_nl))]),_c('p',[_vm._v(_vm._s(_vm._f("subStr")(fields.description_nl)))]),_c('a',{staticClass:"read-more standalone-link",attrs:{"href":"#"}},[_vm._v("\n            Lees meer\n            "),_c('span',{staticClass:"visually-hidden"},[_vm._v("over "+_vm._s(fields.name_nl))])])]),_c('div',{staticClass:"content__first"},[_c('div',{staticClass:"figure-wrapper"},[_c('figure',[_c('div',{staticClass:"image-wrapper",attrs:{"data-ratio":"8:5"}},[_c('img',{attrs:{"src":fields.image_thumbnail,"alt":""}})])]),_c('div',{staticClass:"accolade-inverse bottom-left"})])])]),_c('a',{staticClass:"teaser-overlay-link",attrs:{"href":"#","tabindex":"-1","aria-hidden":"true"}},[_vm._v(_vm._s(fields.name_nl))])])}),0)])}
-var staticRenderFns = []
+return _c('li',{key:index + '-' + fields.uuid,staticClass:"teaser"},[_c('article',{staticClass:"teaser-content"},[_c('div',{staticClass:"content__second"},[_c('h3',[_vm._v(_vm._s(fields.name_nl))]),_c('p',[_vm._v(_vm._s(_vm._f("subStr")(fields.description_nl)))]),_c('a',{staticClass:"read-more standalone-link",attrs:{"href":"#"}},[_vm._v("\n            Lees meer\n            "),_c('span',{staticClass:"visually-hidden"},[_vm._v("over "+_vm._s(fields.name_nl))])])]),_c('div',{staticClass:"content__first"},[_c('div',{staticClass:"figure-wrapper"},[_c('figure',[_c('div',{staticClass:"image-wrapper",attrs:{"data-ratio":"8:5"}},[_c('img',{attrs:{"src":fields.image_thumbnail,"alt":""}})])]),_c('div',{staticClass:"accolade-inverse bottom-left"})])])]),_c('a',{staticClass:"teaser-overlay-link",attrs:{"href":"#","tabindex":"-1","aria-hidden":"true"}},[_vm._v(_vm._s(fields.name_nl))])])}),0),_c('pagination',{staticClass:"mt-20",attrs:{"total":_vm.total,"active":_vm.page},on:{"navigate":_vm.navigate}}),(_vm.loading)?_c('div',{staticClass:"spinner-wrapper"},[_vm._m(0)]):_vm._e()],1)}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"spinner"},[_c('div',[_vm._v("…loading")])])}]
 
 
-// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=029975a5&shadow
+// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=25dba6c8&shadow
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=script&lang=js&shadow
+// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Pagination.vue?vue&type=template&id=994a8b20&
+var Paginationvue_type_template_id_994a8b20_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.total > 1)?_c('nav',{staticClass:"pager",attrs:{"aria-labelledby":"pagination_1"}},[_c('h2',{staticClass:"visually-hidden",attrs:{"id":"pagination_1"}},[_vm._v("\n    Paginatie\n  ")]),_c('ul',{staticClass:"pager__items"},[(1 !== +_vm.active)?_c('li',{staticClass:"previous"},[_c('a',{staticClass:"previous",attrs:{"href":"#"},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active-1)}}},[_vm._v("\n        Vorige\n        "),_c('span',{staticClass:"visually-hidden"},[_vm._v("pagina")])])]):_vm._e(),_c('li',[_c('a',{class:{active: 1 === +_vm.active},attrs:{"href":"#","title":("Ga naar pagina " + (1))},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', 1)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(1)+"\n      ")])]),(_vm.active > 3)?_c('li',[_vm._v("\n      ...\n    ")]):_vm._e(),(_vm.active - 1 > 1 && +_vm.active-1 !== _vm.total)?_c('li',[_c('a',{attrs:{"href":"#","title":("Ga naar pagina " + (_vm.active-1))},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active-1)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(+_vm.active - 1)+"\n      ")])]):_vm._e(),(+_vm.active !==1 && +_vm.active !== _vm.total)?_c('li',[_c('a',{staticClass:"active",attrs:{"href":"#","title":("Ga naar pagina " + _vm.active)},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(+_vm.active)+"\n      ")])]):_vm._e(),(_vm.active+1 < _vm.total)?_c('li',[_c('a',{attrs:{"href":"#","title":("Ga naar pagina " + (+_vm.active+1))},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active+1)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(+_vm.active + 1)+"\n      ")])]):_vm._e(),(_vm.total - _vm.active > 2)?_c('li',[_vm._v("\n      ...\n    ")]):_vm._e(),_c('li',[_c('a',{class:{active: _vm.total === +_vm.active},attrs:{"href":"#","title":("Ga naar pagina " + _vm.total)},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.total)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(_vm.total)+"\n      ")])]),(_vm.total !== +_vm.active)?_c('li',{staticClass:"next"},[_c('a',{staticClass:"next",attrs:{"href":"#"},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active+1)}}},[_vm._v("\n        Volgende\n        "),_c('span',{staticClass:"visually-hidden"},[_vm._v("pagina")])])]):_vm._e()])]):_vm._e()}
+var Paginationvue_type_template_id_994a8b20_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/Pagination.vue?vue&type=template&id=994a8b20&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Pagination.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -853,43 +860,87 @@ var staticRenderFns = []
 //
 //
 //
-/* harmony default export */ var Appvue_type_script_lang_js_shadow = ({
-  name: 'App',
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/**
+ * @typedef {object} ClickEvent
+ */
+/* harmony default export */ var Paginationvue_type_script_lang_js_ = ({
   props: {
-    theme: {
-      type: String,
-      default: 'cs--cyan'
+    total: {
+      type: Number,
+      required: true
+    },
+    active: {
+      type: Number,
+      required: true
     }
   },
-
-  data() {
-    return {
-      items: null
-    };
-  },
-
-  filters: {
-    subStr(v) {
-      if (v.length <= 160) {
-        return v;
-      }
-
-      return v.substring(0, 160) + '...';
+  methods: {
+    /**
+     * Remove focus since the link value will be
+     * updated after the click event.
+     *
+     * @param {ClickEvent} e
+     */
+    blur: e => {
+      e.target.blur();
     }
-
-  },
-  components: {},
-
-  mounted() {
-    fetch('https://data.stad.gent/api/records/1.0/search/?dataset=gentse-feesten-evenementen-2019&rows=12').then(response => response.json()).then(data => {
-      console.log(data);
-      return data;
-    }).then(data => this.items = data.records);
   }
-
 });
-// CONCATENATED MODULE: ./src/App.vue?vue&type=script&lang=js&shadow
- /* harmony default export */ var src_Appvue_type_script_lang_js_shadow = (Appvue_type_script_lang_js_shadow); 
+// CONCATENATED MODULE: ./src/components/Pagination.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_Paginationvue_type_script_lang_js_ = (Paginationvue_type_script_lang_js_); 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
@@ -990,6 +1041,124 @@ function componentNormalizer_normalizeComponent (
   }
 }
 
+// CONCATENATED MODULE: ./src/components/Pagination.vue
+
+
+
+
+
+/* normalize component */
+
+var component = componentNormalizer_normalizeComponent(
+  components_Paginationvue_type_script_lang_js_,
+  Paginationvue_type_template_id_994a8b20_render,
+  Paginationvue_type_template_id_994a8b20_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  ,true
+)
+
+/* harmony default export */ var Pagination = (component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=script&lang=js&shadow
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var Appvue_type_script_lang_js_shadow = ({
+  name: 'App',
+  props: {
+    theme: {
+      type: String,
+      default: 'cs--cyan'
+    }
+  },
+
+  data() {
+    return {
+      offset: 0,
+      total: 0,
+      items: [],
+      loading: true
+    };
+  },
+
+  filters: {
+    subStr(v) {
+      if (!v || v.length <= 160) {
+        return v;
+      }
+
+      return v.substring(0, 160) + '...';
+    }
+
+  },
+  components: {
+    Pagination: Pagination
+  },
+  methods: {
+    navigate(page) {
+      this.offset = (page - 1) * 12;
+      this.fetch().then(() => this.$refs.grid.focus());
+    },
+
+    fetch() {
+      this.loading = true;
+      return fetch('https://data.stad.gent/api/records/1.0/search/?dataset=gentse-feesten-evenementen-2019&rows=12&start=' + this.offset).then(response => response.json()).then(data => {
+        this.total = Math.ceil(data.nhits / 12);
+        this.items = data.records;
+      }).then(() => this.loading = false);
+    }
+
+  },
+  computed: {
+    page() {
+      return Math.floor(this.offset / 12) + 1;
+    }
+
+  },
+
+  mounted() {
+    this.fetch();
+  }
+
+});
+// CONCATENATED MODULE: ./src/App.vue?vue&type=script&lang=js&shadow
+ /* harmony default export */ var src_Appvue_type_script_lang_js_shadow = (Appvue_type_script_lang_js_shadow); 
 // CONCATENATED MODULE: ./src/App.vue?shadow
 
 
@@ -1003,7 +1172,7 @@ if (style0.__inject__) style0.__inject__(context)
 
 /* normalize component */
 
-var component = componentNormalizer_normalizeComponent(
+var Appshadow_component = componentNormalizer_normalizeComponent(
   src_Appvue_type_script_lang_js_shadow,
   render,
   staticRenderFns,
@@ -1014,7 +1183,7 @@ var component = componentNormalizer_normalizeComponent(
   ,true
 )
 
-/* harmony default export */ var Appshadow = (component.exports);
+/* harmony default export */ var Appshadow = (Appshadow_component.exports);
 // CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/@vue/cli-service/lib/commands/build/entry-wc.js
 
 
@@ -8947,7 +9116,7 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 exports.push([module.i, "@import url(https://stijlgids.stad.gent/v4/css/main.css);"]);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".spinner{position:absolute;top:0;right:0;bottom:0;left:0;background-color:hsla(0,0%,100%,.8);animation:fade .5s ease-out forwards;z-index:2}", ""]);
 // Exports
 module.exports = exports;
 
