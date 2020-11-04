@@ -813,14 +813,31 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=099df458&shadow
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.theme},[_c('h1',[_vm._v("test")]),_vm._m(0)])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"highlight cta-block link highlight--left"},[_c('div',{staticClass:"highlight__inner"},[_c('h2',[_vm._v("This is a title")]),_c('div',{staticClass:"links"},[_c('a',{staticClass:"button button-primary",attrs:{"href":"#","title":"This is a title"}},[_vm._v("An internal link ")])])])])}]
+// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=029975a5&shadow
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.theme},[_c('ul',{staticClass:"grid-3"},_vm._l((_vm.items),function(ref){
+var fields = ref.fields;
+return _c('li',{key:fields.uuid,staticClass:"teaser"},[_c('article',{staticClass:"teaser-content"},[_c('div',{staticClass:"content__second"},[_c('h3',[_vm._v(_vm._s(fields.name_nl))]),_c('p',[_vm._v(_vm._s(_vm._f("subStr")(fields.description_nl)))]),_c('a',{staticClass:"read-more standalone-link",attrs:{"href":"#"}},[_vm._v("\n            Lees meer\n            "),_c('span',{staticClass:"visually-hidden"},[_vm._v("over "+_vm._s(fields.name_nl))])])]),_c('div',{staticClass:"content__first"},[_c('div',{staticClass:"figure-wrapper"},[_c('figure',[_c('div',{staticClass:"image-wrapper",attrs:{"data-ratio":"8:5"}},[_c('img',{attrs:{"src":fields.image_thumbnail,"alt":""}})])]),_c('div',{staticClass:"accolade-inverse bottom-left"})])])]),_c('a',{staticClass:"teaser-overlay-link",attrs:{"href":"#","tabindex":"-1","aria-hidden":"true"}},[_vm._v(_vm._s(fields.name_nl))])])}),0)])}
+var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=099df458&shadow
+// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=029975a5&shadow
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=script&lang=js&shadow
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -844,7 +861,32 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
       default: 'cs--cyan'
     }
   },
-  components: {}
+
+  data() {
+    return {
+      items: null
+    };
+  },
+
+  filters: {
+    subStr(v) {
+      if (v.length <= 160) {
+        return v;
+      }
+
+      return v.substring(0, 160) + '...';
+    }
+
+  },
+  components: {},
+
+  mounted() {
+    fetch('https://data.stad.gent/api/records/1.0/search/?dataset=gentse-feesten-evenementen-2019&rows=12').then(response => response.json()).then(data => {
+      console.log(data);
+      return data;
+    }).then(data => this.items = data.records);
+  }
+
 });
 // CONCATENATED MODULE: ./src/App.vue?vue&type=script&lang=js&shadow
  /* harmony default export */ var src_Appvue_type_script_lang_js_shadow = (Appvue_type_script_lang_js_shadow); 
