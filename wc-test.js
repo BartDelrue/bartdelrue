@@ -813,12 +813,12 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=99b2fd90&shadow
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("test")]),_c('section',{staticClass:"highlight cta-block link highlight--left"},[_c('div',{staticClass:"highlight__inner"},[_c('h2',[_vm._v("This is a title")]),_c('div',{staticClass:"links"},[_c('a',{staticClass:"button button-primary",attrs:{"href":"#","title":"This is a title"}},[_vm._v("\n          An internal link ")])])])])])}]
+// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=099df458&shadow
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.theme},[_c('h1',[_vm._v("test")]),_vm._m(0)])}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"highlight cta-block link highlight--left"},[_c('div',{staticClass:"highlight__inner"},[_c('h2',[_vm._v("This is a title")]),_c('div',{staticClass:"links"},[_c('a',{staticClass:"button button-primary",attrs:{"href":"#","title":"This is a title"}},[_vm._v("An internal link ")])])])])}]
 
 
-// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=99b2fd90&shadow
+// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=099df458&shadow
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=script&lang=js&shadow
 //
@@ -836,13 +836,14 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ var Appvue_type_script_lang_js_shadow = ({
   name: 'App',
+  props: {
+    theme: {
+      type: String,
+      default: 'cs--cyan'
+    }
+  },
   components: {}
 });
 // CONCATENATED MODULE: ./src/App.vue?vue&type=script&lang=js&shadow
