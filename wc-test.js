@@ -813,14 +813,14 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=25dba6c8&shadow
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.theme},[_c('ul',{ref:"grid",staticClass:"grid-3",attrs:{"tabindex":"-1"}},_vm._l((_vm.items),function(ref,index){
+// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=cdee328e&shadow
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.theme},[_c('form',{staticClass:"mb-20",on:{"submit":function($event){$event.preventDefault();return _vm.search($event)}}},[_c('div',{staticClass:"flex mb-10"},[_c('div',[_c('label',{attrs:{"for":"naam"}},[_vm._v("Naam")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.name),expression:"name"}],attrs:{"type":"search","id":"naam"},domProps:{"value":(_vm.name)},on:{"input":function($event){if($event.target.composing){ return; }_vm.name=$event.target.value}}})]),_c('div'),_c('div'),_c('div'),_c('div'),_c('div')]),_c('button',{staticClass:"button button-secondary icon-search icon-left",attrs:{"type":"submit"}},[_vm._v("Zoeken")])]),(_vm.items.length)?_c('ul',{ref:"grid",staticClass:"grid-3",attrs:{"tabindex":"-1"}},_vm._l((_vm.items),function(ref,index){
 var fields = ref.fields;
-return _c('li',{key:index + '-' + fields.uuid,staticClass:"teaser"},[_c('article',{staticClass:"teaser-content"},[_c('div',{staticClass:"content__second"},[_c('h3',[_vm._v(_vm._s(fields.name_nl))]),_c('p',[_vm._v(_vm._s(_vm._f("subStr")(fields.description_nl)))]),_c('a',{staticClass:"read-more standalone-link",attrs:{"href":"#"}},[_vm._v("\n            Lees meer\n            "),_c('span',{staticClass:"visually-hidden"},[_vm._v("over "+_vm._s(fields.name_nl))])])]),_c('div',{staticClass:"content__first"},[_c('div',{staticClass:"figure-wrapper"},[_c('figure',[_c('div',{staticClass:"image-wrapper",attrs:{"data-ratio":"8:5"}},[_c('img',{attrs:{"src":fields.image_thumbnail,"alt":""}})])]),_c('div',{staticClass:"accolade-inverse bottom-left"})])])]),_c('a',{staticClass:"teaser-overlay-link",attrs:{"href":"#","tabindex":"-1","aria-hidden":"true"}},[_vm._v(_vm._s(fields.name_nl))])])}),0),_c('pagination',{staticClass:"mt-20",attrs:{"total":_vm.total,"active":_vm.page},on:{"navigate":_vm.navigate}}),(_vm.loading)?_c('div',{staticClass:"spinner-wrapper"},[_vm._m(0)]):_vm._e()],1)}
+return _c('li',{key:index + '-' + fields.uuid,staticClass:"teaser"},[_c('article',{staticClass:"teaser-content"},[_c('div',{staticClass:"content__second"},[_c('h3',[_vm._v(_vm._s(fields.name_nl))]),_c('p',[_vm._v(_vm._s(_vm._f("subStr")(fields.description_nl)))]),_c('a',{staticClass:"read-more standalone-link",attrs:{"href":"#"}},[_vm._v("\n            Lees meer\n            "),_c('span',{staticClass:"visually-hidden"},[_vm._v("over "+_vm._s(fields.name_nl))])])]),_c('div',{staticClass:"content__first"},[_c('div',{staticClass:"figure-wrapper"},[_c('figure',[_c('div',{staticClass:"image-wrapper",attrs:{"data-ratio":"8:5"}},[(fields.image_path)?_c('img',{attrs:{"src":'https://data.stad.gent/explore/dataset/gentse-feesten-evenementen-2019/files/' + fields.image_path.id+ '/300',"alt":""}}):_vm._e()])]),_c('div',{staticClass:"accolade-inverse bottom-left"})])])]),_c('a',{staticClass:"teaser-overlay-link",attrs:{"href":"#","tabindex":"-1","aria-hidden":"true"}},[_vm._v(_vm._s(fields.name_nl))])])}),0):_vm._e(),_c('pagination',{staticClass:"mt-20",attrs:{"total":_vm.total,"active":_vm.page},on:{"navigate":_vm.navigate}}),(_vm.loading)?_c('div',{staticClass:"spinner-wrapper"},[_vm._m(0)]):_vm._e()],1)}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"spinner"},[_c('div',[_vm._v("…loading")])])}]
 
 
-// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=25dba6c8&shadow
+// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=cdee328e&shadow
 
 // CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Pagination.vue?vue&type=template&id=994a8b20&
 var Paginationvue_type_template_id_994a8b20_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.total > 1)?_c('nav',{staticClass:"pager",attrs:{"aria-labelledby":"pagination_1"}},[_c('h2',{staticClass:"visually-hidden",attrs:{"id":"pagination_1"}},[_vm._v("\n    Paginatie\n  ")]),_c('ul',{staticClass:"pager__items"},[(1 !== +_vm.active)?_c('li',{staticClass:"previous"},[_c('a',{staticClass:"previous",attrs:{"href":"#"},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active-1)}}},[_vm._v("\n        Vorige\n        "),_c('span',{staticClass:"visually-hidden"},[_vm._v("pagina")])])]):_vm._e(),_c('li',[_c('a',{class:{active: 1 === +_vm.active},attrs:{"href":"#","title":("Ga naar pagina " + (1))},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', 1)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(1)+"\n      ")])]),(_vm.active > 3)?_c('li',[_vm._v("\n      ...\n    ")]):_vm._e(),(_vm.active - 1 > 1 && +_vm.active-1 !== _vm.total)?_c('li',[_c('a',{attrs:{"href":"#","title":("Ga naar pagina " + (_vm.active-1))},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active-1)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(+_vm.active - 1)+"\n      ")])]):_vm._e(),(+_vm.active !==1 && +_vm.active !== _vm.total)?_c('li',[_c('a',{staticClass:"active",attrs:{"href":"#","title":("Ga naar pagina " + _vm.active)},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(+_vm.active)+"\n      ")])]):_vm._e(),(_vm.active+1 < _vm.total)?_c('li',[_c('a',{attrs:{"href":"#","title":("Ga naar pagina " + (+_vm.active+1))},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active+1)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(+_vm.active + 1)+"\n      ")])]):_vm._e(),(_vm.total - _vm.active > 2)?_c('li',[_vm._v("\n      ...\n    ")]):_vm._e(),_c('li',[_c('a',{class:{active: _vm.total === +_vm.active},attrs:{"href":"#","title":("Ga naar pagina " + _vm.total)},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.total)}}},[_c('span',{staticClass:"visually-hidden"},[_vm._v("Pagina")]),_vm._v("\n        "+_vm._s(_vm.total)+"\n      ")])]),(_vm.total !== +_vm.active)?_c('li',{staticClass:"next"},[_c('a',{staticClass:"next",attrs:{"href":"#"},on:{"click":function($event){$event.preventDefault();return _vm.$emit('navigate', _vm.active+1)}}},[_vm._v("\n        Volgende\n        "),_c('span',{staticClass:"visually-hidden"},[_vm._v("pagina")])])]):_vm._e()])]):_vm._e()}
@@ -1098,6 +1098,22 @@ var component = componentNormalizer_normalizeComponent(
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ var Appvue_type_script_lang_js_shadow = ({
   name: 'App',
@@ -1113,7 +1129,8 @@ var component = componentNormalizer_normalizeComponent(
       offset: 0,
       total: 0,
       items: [],
-      loading: true
+      loading: true,
+      name: null
     };
   },
 
@@ -1131,6 +1148,10 @@ var component = componentNormalizer_normalizeComponent(
     Pagination: Pagination
   },
   methods: {
+    search() {
+      this.fetch();
+    },
+
     navigate(page) {
       this.offset = (page - 1) * 12;
       this.fetch().then(() => this.$refs.grid.focus());
@@ -1138,7 +1159,7 @@ var component = componentNormalizer_normalizeComponent(
 
     fetch() {
       this.loading = true;
-      return fetch('https://data.stad.gent/api/records/1.0/search/?dataset=gentse-feesten-evenementen-2019&rows=12&start=' + this.offset).then(response => response.json()).then(data => {
+      return fetch(`https://data.stad.gent/api/records/1.0/search/?dataset=gentse-feesten-evenementen-2019&rows=12&start=${this.offset}&q=${this.name}`).then(response => response.json()).then(data => {
         this.total = Math.ceil(data.nhits / 12);
         this.items = data.records;
       }).then(() => this.loading = false);
@@ -9116,7 +9137,7 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 exports.push([module.i, "@import url(https://stijlgids.stad.gent/v4/css/main.css);"]);
 // Module
-exports.push([module.i, ".spinner{position:absolute;top:0;right:0;bottom:0;left:0;background-color:hsla(0,0%,100%,.8);animation:fade .5s ease-out forwards;z-index:2}", ""]);
+exports.push([module.i, ".spinner{position:absolute;top:0;right:0;bottom:0;left:0;background-color:hsla(0,0%,100%,.8);animation:fade .5s ease-out forwards;z-index:2}.flex{display:flex;flex-wrap:wrap}", ""]);
 // Exports
 module.exports = exports;
 
