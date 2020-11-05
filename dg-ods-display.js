@@ -1081,14 +1081,14 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AwesomeTable.vue?vue&type=template&id=f9baad84&shadow
+// CONCATENATED MODULE: /home/bart/.config/yarn/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"75f22304-vue-loader-template"}!/home/bart/.config/yarn/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AwesomeTable.vue?vue&type=template&id=5ee52265&shadow
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"root",class:_vm.theme},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(!_vm.detail),expression:"!detail"}]},[_c('form',{staticClass:"mb-20",on:{"submit":function($event){$event.preventDefault();return _vm.search($event)}}},[_c('div',{staticClass:"flex mb-10"},[(_vm.query)?_c('div',[_c('label',{attrs:{"for":"query"}},[_vm._v(_vm._s(_vm.query))]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.q),expression:"q"}],attrs:{"type":"text","id":"query"},domProps:{"value":(_vm.q)},on:{"input":function($event){if($event.target.composing){ return; }_vm.q=$event.target.value}}})]):_vm._e(),_vm._l((_vm.myFacets),function(facet,index){return _c('div',{key:facet.field + '-' + index},[_c('label',{attrs:{"for":facet.field}},[_vm._v(_vm._s(facet.label))]),(facet.type === 'select')?_c('select',{directives:[{name:"model",rawName:"v-model",value:(facet.value),expression:"facet.value"}],attrs:{"id":facet.field},on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.$set(facet, "value", $event.target.multiple ? $$selectedVal : $$selectedVal[0])}}},[_c('option',{attrs:{"value":"null"}},[_vm._v("Geen keuze")]),_vm._l((facet.options),function(option,i){return _c('option',{key:facet.field + '-' + index + '-' + option.value + '-' + i,domProps:{"value":option.value}},[_vm._v(_vm._s(option.text)+"\n            ")])})],2):_vm._e()])})],2),_c('button',{staticClass:"button button-secondary icon-search icon-left",attrs:{"type":"submit"}},[_vm._v("Zoeken")])]),_c('ul',{ref:"grid",staticClass:"grid-3",attrs:{"tabindex":"-1"}},_vm._l((_vm.items),function(ref,index){
 var fields = ref.fields;
 return _c('li',{key:index + '-' + fields.uuid,staticClass:"teaser"},[_c('article',{staticClass:"teaser-content"},[_c('div',{staticClass:"content__second"},[_c('h3',[_vm._v(_vm._s(fields.name_nl))]),_c('p',[_vm._v(_vm._s(_vm._f("subStr")(fields.description_nl)))]),_c('a',{staticClass:"read-more standalone-link",attrs:{"href":"#"},on:{"click":function($event){$event.preventDefault();return _vm.select($event, fields)}}},[_vm._v("\n              Lees meer\n              "),_c('span',{staticClass:"visually-hidden"},[_vm._v("over "+_vm._s(fields.name_nl))])])]),_c('div',{staticClass:"content__first"},[_c('div',{staticClass:"figure-wrapper"},[_c('figure',[_c('div',{staticClass:"image-wrapper",attrs:{"data-ratio":"8:5"}},[(fields.image_path)?_c('img',{attrs:{"src":'https://data.stad.gent/explore/dataset/gentse-feesten-evenementen-2019/files/' + fields.image_path.id+ '/300',"alt":""}}):_vm._e()])]),_c('div',{staticClass:"accolade-inverse bottom-left"})]),_c('div',{staticClass:"tag-list-wrapper"},[_c('ul',{staticClass:"tag-list"},[(fields.outdoors !== undefined)?_c('li',[_c('span',{staticClass:"tag"},[_vm._v(_vm._s(fields.outdoors === '0' ? 'Binnen' : 'Buiten'))])]):_vm._e()])])])]),_c('a',{staticClass:"teaser-overlay-link",attrs:{"href":"#","tabindex":"-1","aria-hidden":"true"},on:{"click":function($event){$event.preventDefault();return _vm.select($event, fields)}}},[_vm._v(_vm._s(fields.name_nl))])])}),0),_c('pagination',{staticClass:"mt-20",attrs:{"total":_vm.total,"active":_vm.page},on:{"navigate":_vm.navigate}}),(_vm.loading)?_c('div',{staticClass:"spinner-wrapper"},[_vm._m(0)]):_vm._e()],1),(_vm.detail)?_c('div',[_c('div',{staticClass:"action-header"},[_c('h2',{staticStyle:{"margin-right":"2rem"},attrs:{"tabindex":"-1","id":"detail-header"}},[_vm._v(_vm._s(_vm.detail.name_nl))]),_c('button',{ref:"test",staticClass:"mb-8 button button-secondary icon-left icon-arrow-left",on:{"click":_vm.back}},[_vm._v("Terug")])]),_c('p',[_vm._v(_vm._s(_vm.detail.description_nl))])]):_vm._e()])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"spinner"},[_c('div',[_vm._v("…loading")])])}]
 
 
-// CONCATENATED MODULE: ./src/components/AwesomeTable.vue?vue&type=template&id=f9baad84&shadow
+// CONCATENATED MODULE: ./src/components/AwesomeTable.vue?vue&type=template&id=5ee52265&shadow
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-collections.iterator.js
 var web_dom_collections_iterator = __webpack_require__("ddb0");
@@ -1447,7 +1447,6 @@ var component = componentNormalizer_normalizeComponent(
       myFacets: [],
       loading: true,
       q: null,
-      outdoors: null,
       detail: null
     };
   },
@@ -1471,15 +1470,12 @@ var component = componentNormalizer_normalizeComponent(
     }, fields) {
       this.trigger = target;
       this.detail = fields;
+      location.hash = fields.name_nl;
       setTimeout(() => this.$refs.root.querySelector('#detail-header').focus());
     },
 
     back() {
-      this.detail = null;
-
-      if (this.trigger) {
-        setTimeout(() => this.trigger.focus());
-      }
+      history.back();
     },
 
     search() {
@@ -1546,6 +1542,16 @@ var component = componentNormalizer_normalizeComponent(
     if (this.facets) {
       this.myFacets = JSON.parse(this.facets);
     }
+
+    addEventListener('hashchange', () => {
+      if (!location.hash) {
+        this.detail = null;
+
+        if (this.trigger) {
+          setTimeout(() => this.trigger.focus());
+        }
+      }
+    });
   }
 
 });
