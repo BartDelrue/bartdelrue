@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A11y date picker</title>
+
+    <!-- Import Duet Date picker -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.1.0/dist/duet/duet.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.1.0/dist/duet/duet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.1.0/dist/duet/themes/default.css"/>
+
+    <!-- Gent styleguide, do not use as CDN, demo purposes only -->
+    <link rel="stylesheet" href="https://stijlgids.stad.gent/v4/css/main.css">
+
+
+</head>
+<body class="cs--cyan">
+<div class="container" style="min-height: 100vh">
+    <main>
+        <div class="overview-layout">
+            <h1>Date picker demo</h1>
+            <form>
+                <fieldset>
+                    <legend>Enkel</legend>
+                    <div class="form-item ">
+                        <label for="date">Startdatum <span class="label-optional">(optioneel)</span></label>
+                        <div class="field-message " id="input_id-description">
+                            Demo van de Duet date picker: https://github.com/duetds/date-picker
+                            <div class="accolade "></div>
+                        </div>
+                        <div class="form-columns">
+                            <div class="form-item-column">
+                                <duet-date-picker name="startdatum" identifier="date"></duet-date-picker>
+                            </div>
+                            <div class="form-item-column"></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Range</legend>
+                    <div class="form-row">
+                        <div class="form-item stacked">
+                            <label for="startdate">Startdatum</label>
+                            <div class="form-columns">
+                                <div class="form-item-column">
+                                    <duet-date-picker identifier="startdate" name="startdate"
+                                                      class="start"></duet-date-picker>
+                                </div>
+                                <div class="form-item-column"></div>
+                            </div>
+                        </div>
+                        <div class="form-item stacked">
+                            <label for="enddate">Einddatum</label>
+                            <div class="form-columns">
+                                <div class="form-item-column">
+                                    <duet-date-picker identifier="enddate" name="enddate"
+                                                      class="end"></duet-date-picker>
+                                </div>
+                                <div class="form-item-column"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="button button-primary">Verzenden</button>
+                </div>
+            </form>
+
+            <div class="mt-40">
+                <label for="theme">Wijzig thema</label>
+                <select name="theme" id="theme">
+                    <option value="cs--cyan">cyaan</option>
+                    <option value="cs--green">groen</option>
+                    <option value="cs--orange">oranje</option>
+                </select>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+  customElements.whenDefined('duet-date-picker').then(() => {
+    const pickers = document.querySelectorAll('duet-date-picker');
+    const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
+
+    /**
+     * Set Localization
+     */
+    pickers.forEach(p => {
+      p.dateAdapter = {
+        parse (value = '', createDate) {
+          const matches = value.match(DATE_FORMAT);
+
+          if (matches) {
+            return createDate(matches[3], matches[2], matches[1]);
+          }
+        },
+        format (date) {
+          return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        },
+      };
+      p.localization = {
+        buttonLabel: 'Kies een datum',
+        placeholder: 'dd/mm/jjjj',
+        selectedDateMessage: 'Geselecteerde datum is',
+        prevMonthLabel: 'Vorige maand',
+        nextMonthLabel: 'Volgende maand',
+        monthSelectLabel: 'Maand',
+        yearSelectLabel: 'Jaar',
+        closeLabel: 'Sluiten',
+        keyboardInstruction: 'Je kan de pijltjestoetsen gebruiken om te navigeren',
+        calendarHeading: 'Kies een datum',
+        dayNames: [
+          'Zondag', 'Maandag', 'Dinsdag', 'Woensdag',
+          'Donderdag', 'Vrijdag', 'Zaterdag'
+        ],
+        monthNames: [
+          'Januari', 'Februari', 'Maart', 'April',
+          'Mei', 'Juni', 'Juli', 'Augustus', 'September',
+          'Oktober', 'November', 'December'
+        ],
+        monthNamesShort: [
+          'Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun',
+          'Jul', 'Aug', 'Sept', 'Okt', 'Nov', 'Dec'
+        ],
+      };
+    });
+
+    /**
+     * Date range demo
+     */
+    // Select the above date picker components
+    const startPicker = document.querySelector('.start');
+    const endPicker = document.querySelector('.end');
+    let startDate, endDate;
+
+    // Handle date selection
+    function handleDateSelect () {
+      if (startDate && endDate) {
+        console.log('date range selected', startDate, endDate);
+      }
+    }
+
+    // When the start date picker is changed…
+    startPicker.addEventListener('duetChange', function (e) {
+      startDate = e.detail.valueAsDate;
+      endPicker.min = e.detail.value;
+
+      if (!endDate) {
+        endPicker.show();
+      }
+      handleDateSelect();
+    });
+
+    // When the end date date picker is changed…
+    endPicker.addEventListener('duetChange', function (e) {
+      endDate = e.detail.valueAsDate;
+      startPicker.max = e.detail.value;
+      handleDateSelect();
+    });
+
+  });
+
+
+  const themeSelect = document.getElementById('theme');
+  themeSelect.addEventListener('change', (e) => {
+    document.body.className = e.target.value;
+  });
+
+</script>
+
+</body>
+</html>
