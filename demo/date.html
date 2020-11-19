@@ -21,7 +21,8 @@
 <div class="container" style="min-height: 100vh">
     <main>
         <div class="overview-layout">
-            <h1>Date picker demo</h1>
+            <h1>Duet - stijlgids date picker</h1>
+            <h2>Demo</h2>
             <form>
                 <fieldset>
                     <legend>Enkel</legend>
@@ -29,11 +30,11 @@
                         <label for="date">Startdatum <span class="label-optional">(optioneel)</span></label>
                         <div class="field-message " id="input_id-description">
                             Demo van de Duet date picker: https://github.com/duetds/date-picker
-                            <div class="accolade "></div>
+                            <div class="accolade"></div>
                         </div>
                         <div class="form-columns">
                             <div class="form-item-column">
-                                <duet-date-picker label="Startdatum" name="startdatum" identifier="date"></duet-date-picker>
+                                <duet-date-picker name="startdatum" identifier="date"></duet-date-picker>
                             </div>
                             <div class="form-item-column"></div>
                         </div>
@@ -47,7 +48,7 @@
                             <label for="startdate">Startdatum</label>
                             <div class="form-columns">
                                 <div class="form-item-column">
-                                    <duet-date-picker label="Stardatum" identifier="startdate" name="startdate"
+                                    <duet-date-picker required identifier="startdate" name="startdate"
                                                       class="start"></duet-date-picker>
                                 </div>
                                 <div class="form-item-column"></div>
@@ -57,7 +58,7 @@
                             <label for="enddate">Einddatum</label>
                             <div class="form-columns">
                                 <div class="form-item-column">
-                                    <duet-date-picker label="Einddatum" identifier="enddate" name="enddate"
+                                    <duet-date-picker required identifier="enddate" name="enddate"
                                                       class="end"></duet-date-picker>
                                 </div>
                                 <div class="form-item-column"></div>
@@ -72,7 +73,8 @@
                 </div>
             </form>
 
-            <div class="mt-40">
+            <h2 class="mt-20">Thema</h2>
+            <div>
                 <label for="theme">Wijzig thema</label>
                 <select name="theme" id="theme">
                     <option value="cs--cyan">cyaan</option>
@@ -80,11 +82,18 @@
                     <option value="cs--orange">oranje</option>
                 </select>
             </div>
+
+            <h2 class="mt-20" >Code voorbeeld</h2>
+            <div style="max-height: 40rem; overflow: auto" tabindex="0">
+                <pre>
+                    <code id="code"></code>
+                </pre>
+            </div>
         </div>
     </main>
 </div>
 
-<script>
+<script id="duet_code">
   customElements.whenDefined('duet-date-picker').then(() => {
     const pickers = document.querySelectorAll('duet-date-picker');
     const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
@@ -166,13 +175,15 @@
     });
 
   });
-
-
+</script>
+<script>
   const themeSelect = document.getElementById('theme');
   themeSelect.addEventListener('change', (e) => {
     document.body.className = e.target.value;
   });
-
+</script>
+<script>
+    document.getElementById('code').innerHTML = document.getElementById('duet_code').innerText
 </script>
 
 </body>
