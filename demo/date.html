@@ -68,6 +68,37 @@
 
                 </fieldset>
 
+                <fieldset>
+                    <legend>Range met input date</legend>
+                    <div class="field-message">
+                        Je kan dezelfde functionaliteit bekomen met native input date elementen natuurlijk.<br>
+                        Date change --> update min/max van de andere input date. <br>
+                        <br>
+                        Geen dependencies, geen extra css, geen vertalingen of localization...<br>
+                        Wel nog extra onderzoek nodig op de verschillende browsers.
+                        <div class="accolade"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-item stacked">
+                            <label for="startdate_native">Startdatum</label>
+                            <div class="form-columns">
+                                <div class="form-item-column">
+                                    <input type="date" name="startdate_native" id="startdate_native">
+                                </div>
+                                <div class="form-item-column"></div>
+                            </div>
+                        </div>
+                        <div class="form-item stacked">
+                            <label for="enddate_native">Einddatum</label>
+                            <div class="form-columns">
+                                <div class="form-item-column">
+                                    <input type="date" name="enddate_native" id="enddate_native">
+                                </div>
+                                <div class="form-item-column"></div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
                 <div class="form-actions">
                     <button type="submit" class="button button-primary">Verzenden</button>
                 </div>
@@ -175,6 +206,18 @@
     });
 
   });
+</script>
+<script>
+    const startDateNative = document.getElementById('startdate_native');
+    const endDateNative = document.getElementById('enddate_native');
+
+    startDateNative.addEventListener('change', function (e) {
+      endDateNative.min = startDateNative.value;
+    })
+
+    endDateNative.addEventListener('change', function (e) {
+      startDateNative.max = endDateNative.value;
+    })
 </script>
 <script>
   const themeSelect = document.getElementById('theme');
