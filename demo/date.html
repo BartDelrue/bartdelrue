@@ -210,11 +210,9 @@
 <script>
     const startDateNative = document.getElementById('startdate_native');
     const endDateNative = document.getElementById('enddate_native');
-
     startDateNative.addEventListener('change', function (e) {
       endDateNative.min = startDateNative.value;
     })
-
     endDateNative.addEventListener('change', function (e) {
       startDateNative.max = endDateNative.value;
     })

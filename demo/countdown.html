@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aftellen</title>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="headline">Is het al...?</h1>
+    <form>
+        <label for="date">Datum</label>
+        <input id="date" type="date">
+        <label for="time">Tijd</label>
+        <input id="time" type="time">
+        <button id="set" type="submit">Set</button>
+    </form>
+
+    <div id="countdown">
+        <ul>
+            <li><span id="days"></span>&nbsp;days</li>
+            <li><span id="hours"></span>&nbsp;Hours</li>
+            <li><span id="minutes"></span>&nbsp;Minutes</li>
+            <li><span id="seconds"></span>&nbsp;Seconds</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>(function () {
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24,
+    date = document.getElementById('date'),
+    time = document.getElementById('time'),
+    set = document.getElementById('set'),
+    headline = document.getElementById('headline'),
+    countdown = document.getElementById('countdown');
+
+  let interval;
+
+  Date.prototype.toDateInputValue = (function () {
+    const local = new Date(this);
+    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+    return local.toJSON();
+  });
+
+  let future = new Date();
+  future.setMinutes(future.getMinutes() + 2);
+
+  date.value = future.toDateInputValue().slice(0, 10);
+  time.value = future.toDateInputValue().slice(11, 16);
+
+  set.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    headline.innerText = 'Is het al...?';
+    countdown.style.display = 'block';
+
+    console.log(interval);
+
+    if (interval) {
+      clearInterval(interval);
+    }
+
+    let target = new Date(date.value + 'T' + time.value + ':00'),
+      countDown = target.getTime();
+
+    interval = setInterval(function () {
+
+      let now = new Date().getTime(),
+        distance = countDown - now;
+
+      document.getElementById('days').innerText = Math.floor(distance / (day)),
+        document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+      //do something later when date is reached
+      if (distance < 0) {
+        headline.innerText = 'HOERA!';
+        countdown.style.display = 'none';
+
+        clearInterval(interval);
+      }
+    }, 0);
+  });
+
+}());</script>
+</body>
+</html>
