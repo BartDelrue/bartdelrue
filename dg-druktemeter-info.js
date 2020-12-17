@@ -148,6 +148,13 @@ module.exports = function (url, options) {
 
 /***/ }),
 
+/***/ "1de9":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fonts/gent-icons.7818da03.woff";
+
+/***/ }),
+
 /***/ "24fb":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8663,15 +8670,14 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"127349d8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DrukteBarometer2.vue?vue&type=template&id=1b6d2938&shadow
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"127349d8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DrukteBarometer2.vue?vue&type=template&id=360345f1&shadow
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.theme},[_c('div',{staticClass:"highlight"},[_c('div',{staticClass:"highlight__inner",style:(_vm.color ? 'background-color: ' + _vm.color : '')},[_c('div',{staticClass:"gauge",class:'percent-'+_vm.percent + ' ' + 'former-'+_vm.former},[_c('div',{staticClass:"dial"},[_c('div',{staticClass:"bar"},[_c('div',{staticClass:"circle circle-bg",style:(_vm.shadow ? 'color: ' + _vm.shadow : '')}),_c('div',{staticClass:"circle circle-cover"})]),(!_vm.loading)?_c('div',{staticClass:"needle"},[_c('div',{staticClass:"inner"})]):_vm._e()]),_c('div',{staticClass:"text",attrs:{"role":"status"}},[_c('span',[_vm._v("code")]),_c('span',{domProps:{"textContent":_vm._s(_vm.loading ? _vm.unknown : _vm.code)}})])]),_c('div',[_c('h2',{domProps:{"textContent":_vm._s(_vm.heading)}}),(_vm.clarification)?_c('p',[_c('strong',{domProps:{"textContent":_vm._s(_vm.clarification)}})]):_vm._e(),_c('div',{domProps:{"innerHTML":_vm._s(_vm.legend)}}),_c('p',{staticClass:"small"},[_vm._v(_vm._s(_vm.nextUpdateIn)+" "+_vm._s(_vm.timeRemaining)+" "+_vm._s(_vm.timeRemaining !== 1 ? _vm.minutes : _vm.minute)+".")])])])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/DrukteBarometer2.vue?vue&type=template&id=1b6d2938&shadow
+// CONCATENATED MODULE: ./src/components/DrukteBarometer2.vue?vue&type=template&id=360345f1&shadow
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DrukteBarometer2.vue?vue&type=script&lang=js&shadow
-//
 //
 //
 //
@@ -8777,7 +8783,7 @@ var staticRenderFns = []
      */
     dataset: {
       type: String,
-      default: () => 'druktebarometer-info&q=&rows=1'
+      default: () => 'druktebarometer-info&q=&sort=tijd_van_voltooien&rows=1'
     },
 
     /**
@@ -8842,6 +8848,12 @@ var staticRenderFns = []
         }));
       }
 
+      if (this.value || this.value === 0) {
+        return new Promise(resolve => resolve({
+          status_druktemeter: this.value
+        }));
+      }
+
       let url = `https://data.stad.gent/api/records/1.0/search/?dataset=${this.dataset}`;
       return fetch(url).then(response => response.json()).then(({
         records
@@ -8856,12 +8868,7 @@ var staticRenderFns = []
     }) {
       const setValue = () => {
         this.clarification = toelichting;
-        this.former = this.percent; // override with set value
-
-        if (this.value || this.value === 0) {
-          this.percent = this.value;
-          return;
-        }
+        this.former = this.percent;
 
         if (status_druktemeter > 100) {
           this.percent = 100;
@@ -8941,6 +8948,13 @@ window.customElements.define('dg-druktemeter-info', vue_wc_wrapper(vue_runtime_e
 
 /***/ }),
 
+/***/ "5d5f":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fonts/gent-icons.13f82107.ttf";
+
+/***/ }),
+
 /***/ "615e":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8966,6 +8980,13 @@ module.exports = __webpack_require__.p + "img/book--cyan.20d0b599.svg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/link-light--green.8b63bfab.svg";
+
+/***/ }),
+
+/***/ "69fb":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fonts/gent-icons.497780c2.woff2";
 
 /***/ }),
 
@@ -9124,24 +9145,10 @@ module.exports = __webpack_require__.p + "img/spinner--green.6a68f221.svg";
 
 /***/ }),
 
-/***/ "a914":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "fonts/gent-icons.13f82107.ttf";
-
-/***/ }),
-
 /***/ "aa04":
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/camera-light--teal.7a8f1d05.svg";
-
-/***/ }),
-
-/***/ "afe3":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "fonts/gent-icons.7818da03.woff";
 
 /***/ }),
 
@@ -9252,7 +9259,7 @@ module.exports = __webpack_require__.p + "img/lightbulb-light--teal.7e50fd34.svg
 
 /***/ }),
 
-/***/ "e0eb":
+/***/ "e312":
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/gent-icons.9eb12d68.eot";
@@ -9291,11 +9298,11 @@ module.exports = __webpack_require__.p + "img/book-light--cyan.90da6ce7.svg";
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__("1de5");
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__("e0eb");
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__("e312");
 var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__("f4d5");
-var ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__("f861");
-var ___CSS_LOADER_URL_IMPORT_3___ = __webpack_require__("afe3");
-var ___CSS_LOADER_URL_IMPORT_4___ = __webpack_require__("a914");
+var ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__("69fb");
+var ___CSS_LOADER_URL_IMPORT_3___ = __webpack_require__("1de9");
+var ___CSS_LOADER_URL_IMPORT_4___ = __webpack_require__("5d5f");
 var ___CSS_LOADER_URL_IMPORT_5___ = __webpack_require__("b338");
 var ___CSS_LOADER_URL_IMPORT_6___ = __webpack_require__("6bba");
 var ___CSS_LOADER_URL_IMPORT_7___ = __webpack_require__("cb8c");
@@ -9337,11 +9344,11 @@ var ___CSS_LOADER_URL_IMPORT_42___ = __webpack_require__("146d");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,600,700);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
-var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___, { hash: "?#iefix?v=51" });
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___, { hash: "?#iefix?v=724" });
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___);
 var ___CSS_LOADER_URL_REPLACEMENT_3___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_3___);
 var ___CSS_LOADER_URL_REPLACEMENT_4___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_4___);
-var ___CSS_LOADER_URL_REPLACEMENT_5___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_5___, { hash: "#gent-icons?v=51" });
+var ___CSS_LOADER_URL_REPLACEMENT_5___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_5___, { hash: "#gent-icons?v=724" });
 var ___CSS_LOADER_URL_REPLACEMENT_6___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_6___);
 var ___CSS_LOADER_URL_REPLACEMENT_7___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_7___);
 var ___CSS_LOADER_URL_REPLACEMENT_8___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_8___);
@@ -9391,13 +9398,6 @@ module.exports = exports;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/gent-icons.9eb12d68.eot";
-
-/***/ }),
-
-/***/ "f861":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "fonts/gent-icons.497780c2.woff2";
 
 /***/ }),
 
