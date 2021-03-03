@@ -35,7 +35,7 @@
             z-index: 1;
         }
 
-        label {
+        .propLabels label {
             display: inline-block;
             margin: 1rem;
         }
@@ -88,20 +88,27 @@
             min-height: 100vh;
         }
 
-        .DOM, .DOM div {
+        ol {
+            margin: 2rem 1rem;
+        }
+        li {
+            margin-bottom: .5rem;
+        }
+
+        .box, .box div {
             border: 1px solid white;
             padding: 1rem;
             margin: 1rem;
             box-shadow: 0 0 .2rem rgba(255, 255, 255, .5), 0 0 .5rem rgba(255, 255, 255, .5);
         }
 
-        .DOM div {
+        .box div {
             border: 1px solid white;
             padding: .5rem;
             margin: 2rem .5rem 2rem 2rem;
         }
 
-        .DOM span {
+        .box span {
             margin-left: 1rem;
             font-weight: bold;
             font-size: .6em;
@@ -109,6 +116,19 @@
 
         #domino button {
             height: 5rem;
+        }
+
+        form > input {
+            margin-bottom: 1rem;
+            font-size: 1em;
+        }
+
+        form > label {
+            display: block;
+        }
+
+        form > button {
+            margin-top: 2rem;
         }
     </style>
 </head>
@@ -160,7 +180,7 @@
     </section>
     <section>
         <h2>Propagation</h2>
-        <div class="DOM" id="one">
+        <div class="box" id="one">
             één <span>eventListener('click', function() { log('één') })</span>
             <div id="two">
                 twee <span>eventListener('click', function() { log('twee') })</span>
@@ -175,8 +195,11 @@
         <div id="console">
 
         </div>
-        <label><input id="prop" type="checkbox"> Toon fase</label>
-        <label><input id="stopProp" type="checkbox"> Stop propagation</label>
+        <div class="propLabels">
+            <label><input id="prop" type="checkbox"> Toon fase</label>
+            <label><input id="stopProp" type="checkbox"> Stop propagation</label>
+        </div>
+
         <script>
           (function () {
 
@@ -221,7 +244,7 @@
     <section>
         <h2>Oefening</h2>
 
-        <div class="DOM" id="domino">
+        <div class="box" id="domino">
             <button></button>
             <button></button>
             <button></button>
@@ -258,9 +281,9 @@
         </div>
 
         <ol>
-            <li>zet een eventlistener op alle knoppen, met als handler 'fall'</li>
+            <li>zet een eventListener op alle knoppen, met als handler 'vallen'</li>
             <li>als op één knop geklikt wordt moeten alle <strong>volgende</strong> knoppen ook omvallen</li>
-            <li>pas als de laatste valt mag de div met ID 'domino' rood worden door middel via event propagation</li>
+            <li>pas als de laatste valt mag de div met ID 'domino' rood worden door middel van event propagation</li>
         </ol>
 
         <pre>
@@ -329,6 +352,27 @@
 
           })();
         </script>
+    </section>
+    <section>
+        <h2>Extra</h2>
+
+        <form class="box">
+
+            <label for="name">Naam</label>
+            <input type="text" id="name">
+
+            <label for="firstname">Voornaam</label>
+            <input type="text" id="firstname">
+
+            <label><input type="checkbox" id="isValid"> Formulier is geldig</label>
+
+            <button type="submit">Verstuur</button>
+        </form>
+
+        <ol>
+            <li>Voorkom dat het formulier verstuurd wordt, zolang 'Formulier is geldig' niet aangevinkt is.</li>
+        </ol>
+
     </section>
 </main>
 

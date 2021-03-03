@@ -28,7 +28,7 @@
         }
 
         section {
-            margin: 0 auto;
+            margin: 0 auto 4rem auto;
             max-width: 1600px;
         }
 
@@ -38,7 +38,7 @@
             padding: 1rem 0;
             margin: 0;
             border-bottom: 1px solid white;
-            background-color: inherit;
+            background-color: #0e1e2f;
             height: 2rem;
             counter-reset: h2counter;
             z-index: 2;
@@ -49,6 +49,14 @@
             counter-increment: h2counter;
         }
 
+        ol {
+            margin: 2rem 1rem;
+        }
+        li {
+            margin-bottom: .5rem;
+        }
+
+
         .box {
             border: 1px solid white;
             padding: 1rem;
@@ -56,13 +64,29 @@
             box-shadow: 0 0 .2rem rgba(255, 255, 255, .5), 0 0 .5rem rgba(255, 255, 255, .5);
         }
 
-        #domino button {
-            height: 5rem;
+        button {
             position: relative;
             font-size: 1rem;
-            margin: .5rem;
             padding: .5rem;
+        }
+
+        #domino button {
+            height: 5rem;
+            margin: .5rem;
             transition: transform .2s ease-in-out;
+        }
+
+        form > input {
+            margin-bottom: 1rem;
+            font-size: 1em;
+        }
+
+        form > label {
+            display: block;
+        }
+
+        form > button {
+            margin-top: 2rem;
         }
     </style>
 </head>
@@ -110,11 +134,32 @@
         </div>
 
         <ol>
-            <li>zet een eventlistener op alle knoppen, met als handler 'fall'</li>
+            <li>zet een eventListener op alle knoppen, met als handler 'vallen'</li>
             <li>als op één knop geklikt wordt moeten alle <strong>volgende</strong> knoppen ook omvallen</li>
-            <li>pas als de laatste valt mag 'domino' rood worden door middel van event propagation</li>
+            <li>pas als de laatste valt mag de div met ID 'domino' rood worden door middel van event propagation</li>
         </ol>
 
+    </section>
+
+    <section>
+        <h2>Extra</h2>
+
+        <form class="box">
+
+            <label for="name">Naam</label>
+            <input type="text" id="name">
+
+            <label for="firstname">Voornaam</label>
+            <input type="text" id="firstname">
+
+            <label><input type="checkbox" id="isValid"> Formulier is geldig</label>
+
+            <button type="submit">Verstuur</button>
+        </form>
+
+        <ol>
+            <li>Voorkom dat het formulier verstuurd wordt, zolang 'Formulier is geldig' niet aangevinkt is.</li>
+        </ol>
 
     </section>
 </main>
@@ -133,19 +178,19 @@
 
       // zorg dat de volgende knop 'valt'
       // verhinder dat het event propageert als er geen volgende knop is!
-    }
+    };
 
-    for (let i=0; i < knoppen.length; i++) {
+    for (let i = 0; i < knoppen.length; i++) {
       const knop = knoppen[i];
 
       // plaats een eventListener op de knop
     }
 
-    domino.addEventListener('click', function() {
+    domino.addEventListener('click', function () {
       domino.style.backgroundColor = 'darkred';
-    })
+    });
 
-  })()
+  })();
 </script>
 </body>
 </html>
