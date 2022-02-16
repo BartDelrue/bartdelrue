@@ -29,12 +29,13 @@
     <main class="main">
 
         <div class="controls">
-            <button id="btnControls" type="button">add ball</button>
+
 
             <div id="controls">
                 <fieldset class="base">
+                    <button id="btnControls" type="button">add ball</button>
                     <div>
-                        <label for="base">Background color: </label>
+                        <label for="base">Background color</label>
                         <input type="color" id="base">
                     </div>
                 </fieldset>
@@ -51,192 +52,9 @@
         <p>&copy; 2017 <a href="https://bartdelrue.github.io">bartdelrue.github.io</a></p>
     </footer>
 </div>
-
+<script type="module" src="main.js"></script>
 <script>
-  (function () {
 
-    var count = 0;
-    var controls = document.querySelector('#controls');
-    var css = document.querySelector('#css');
-    var circles = [];
-
-    var color = hsl2rgb(Math.floor(Math.random() * 360) + 1, 100, 15);
-    var makeCircles = function () {
-
-      var background = '';
-
-      circles = [...document.querySelectorAll('fieldset.circle')].map(function (elem) {
-        return {
-          size: elem.querySelector('.size').value,
-          x: elem.querySelector('.x').value,
-          y: elem.querySelector('.y').value,
-          transp: elem.querySelector('.transp').value,
-          blur: elem.querySelector('.blur').value,
-          color: elem.querySelector('.color').value
-        };
-      });
-
-      circles.forEach(function (c) {
-        background += 'radial-gradient(circle at ' + c.x + '% ' + c.y + '%,' + c.color + ('0' + (+c.transp).toString(16)).slice(-2) + ' ' + c.size + '%, transparent ' + (+c.blur + +c.size) + '%),\n';
-      });
-
-      background += 'radial-gradient(' + color + ', ' + color + ');';
-
-      css.value = background;
-
-      background = '.page-wrap{ background: ' + background + ' }';
-
-      var style = document.head.querySelector('#bg_style');
-      style.innerHTML = background;
-
-    };
-
-    var calcL = function (hex) {
-      var r = parseInt(hex.slice(1, 3), 16) / 255,
-        g = parseInt(hex.slice(3, 5), 16) / 255,
-        b = parseInt(hex.slice(5, 7), 16) / 255;
-
-      var rg = r <= .03928 ? r / 12.92 : Math.pow((r + 0.055) / 1.055, 2.4),
-        gg = g <= .03928 ? g / 12.92 : Math.pow((g + 0.055) / 1.055, 2.4),
-        bg = b <= .03928 ? b / 12.92 : Math.pow((b + 0.055) / 1.055, 2.4);
-
-      return .2126 * rg + .7152 * gg + .0722 * bg;
-    };
-
-    var calcRatio = function (colorA, colorB) {
-      var a = calcL(colorA),
-        b = calcL(colorB);
-
-      if (a > b) {
-        return (a + .05) / (b + .05);
-      }
-      return (b + .05) / (a + .05);
-    };
-
-    var makeControls = function (varX, varY, varTransp, varSize, varBlur) {
-
-      count++;
-
-      var c = document.createElement('fieldset');
-      c.id = count;
-      c.className = 'circle';
-
-      c.innerHTML =
-        '<div>' +
-        '<label for="size' + count + '">size: </label> ' +
-        '<input type="range" id="size' + count + '" data-circle="' + count + '" class="size" value="' +
-        (varSize ? varSize : 50) +
-        '" max="100"> ' +
-        '<label for="transp' + count + '">opacity: </label> ' +
-        '<input type="range" id="transp' + count + '" data-circle="' + count + '" class="transp" value="' +
-        (varTransp ? varTransp : 30) +
-        '" max="255"> ' +
-        '<label for="blur' + count + '">blur: </label> ' +
-        '<input type="range" id="blur' + count + '" data-circle="' + count + '" class="blur" value="' +
-        (varBlur ? varBlur : 0) +
-        '" max="100"> ' +
-        '</div>' +
-        '<div>' +
-        '<label for="x' + count + '">x: </label>' +
-        '<input type="range" id="x' + count + '" data-circle="' + count + '" class="x" value="' +
-        (varX ? varX : 50) +
-        '" min="-900" max="900"> ' +
-        '<label for="y' + count + '">y: </label> ' +
-        '<input type="range" id="y' + count + '"  data-circle="' + count + '" class="y" value="' +
-        (varY ? varY : 50) +
-        '" min="-900" max="900"> ' +
-        '<label for="color' + count + '">color: </label> ' +
-        '<input type="color" class="color" data-circle="' + count + '" id="color' + count + '">' +
-        '<div><button class="remove small" data-circle="' + count + '" id="color' + count + '">remove ball</button></div>' +
-        '</div>';
-
-      var size = c.querySelector('.size');
-      var x = c.querySelector('.x');
-      var y = c.querySelector('.y');
-      var transp = c.querySelector('.transp');
-      var blur = c.querySelector('.blur');
-      var color = c.querySelector('.color');
-      var button = c.querySelector('.remove');
-
-      size.addEventListener('input', makeCircles);
-      size.addEventListener('change', makeCircles);
-      x.addEventListener('input', makeCircles);
-      x.addEventListener('change', makeCircles);
-      y.addEventListener('input', makeCircles);
-      y.addEventListener('change', makeCircles);
-      transp.addEventListener('input', makeCircles);
-      transp.addEventListener('change', makeCircles);
-      blur.addEventListener('input', makeCircles);
-      blur.addEventListener('change', makeCircles);
-      color.addEventListener('change', makeCircles);
-
-      button.addEventListener('click', function (e) {
-        controls.removeChild(c);
-        makeCircles();
-      });
-
-      controls.appendChild(c);
-      makeCircles();
-    };
-
-    function hsl2rgb (h, s, l) {
-      h /= 360;
-      s /= 100;
-      l /= 100;
-      let r, g, b;
-      if (s === 0) {
-        r = g = b = l; // achromatic
-      }
-      else {
-        const hue2rgb = (p, q, t) => {
-          if (t < 0) {
-            t += 1;
-          }
-          if (t > 1) {
-            t -= 1;
-          }
-          if (t < 1 / 6) {
-            return p + (q - p) * 6 * t;
-          }
-          if (t < 1 / 2) {
-            return q;
-          }
-          if (t < 2 / 3) {
-            return p + (q - p) * (2 / 3 - t) * 6;
-          }
-          return p;
-        };
-        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        const p = 2 * l - q;
-        r = hue2rgb(p, q, h + 1 / 3);
-        g = hue2rgb(p, q, h);
-        b = hue2rgb(p, q, h - 1 / 3);
-      }
-      const toHex = x => {
-        const hex = Math.round(x * 255).toString(16);
-        return hex.length === 1 ? '0' + hex : hex;
-      };
-      return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-    }
-
-    document.querySelector('#btnControls').addEventListener('click', function () {
-      makeControls();
-    });
-
-    document.querySelector('#base').addEventListener('change', function (e) {
-      color = e.target.value;
-      document.documentElement.style.setProperty('--text-color', calcRatio(e.target.value, '#FFFFFF') < 4.5 ? '#000000' : '#FFFFFF');
-      document.documentElement.style.setProperty('--shadow-color', calcRatio(e.target.value, '#FFFFFF') < 4.5 ? '#FFFFFF' : '#000000');
-
-      makeCircles();
-    });
-
-    document.querySelector('#base').value = color;
-
-    makeControls((Math.floor(Math.random() * 200) + 1) - 100, (Math.floor(Math.random() * 200) + 1) - 100, Math.floor((Math.random() * 30)) + 20, (Math.floor(Math.random() * 20) + 41));
-    makeControls((Math.floor(Math.random() * 200) + 1) - 100, (Math.floor(Math.random() * 200) + 1) - 100, Math.floor((Math.random() * 30)) + 20, (Math.floor(Math.random() * 20) + 41));
-    makeControls((Math.floor(Math.random() * 200) + 1) - 100, (Math.floor(Math.random() * 200) + 1) - 100, Math.floor((Math.random() * 30)) + 20, (Math.floor(Math.random() * 20) + 41));
-  })();
 </script>
 
 <script>
