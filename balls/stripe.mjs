@@ -1,31 +1,21 @@
 'use strict'
 import BaseShape from "./baseShape.mjs";
 
-export default class Ball extends BaseShape {
+export default class Stripe extends BaseShape {
+    get angle() {
+        return this._angle;
+    }
 
-    set x(value) {
-        this._x = value;
+    set angle(value) {
+        this._angle = value;
         this.draw();
-    }
-
-    get x() {
-        return this._x;
-    }
-
-    set y(value) {
-        this._y = value;
-        this.draw();
-    }
-
-    get y() {
-        return this._y;
     }
 
     constructor(uid, settings =
-        {x: 50, y: 50, alpha: 30, size: 50, blur: 0, color: '#000000'}, created, updated, remove) {
+                    {angle: 0, alpha: 30, size: 50, blur: 0, color: '#000000'},
+                created, updated, remove) {
         super(uid, settings, created, updated, remove);
-        this._x = settings.x;
-        this._y = settings.y;
+        this._angle = settings.angle;
         this._makeControls(uid);
     }
 
@@ -33,8 +23,9 @@ export default class Ball extends BaseShape {
         const c = document.createElement('fieldset');
         c.id = uid;
         c.className = 'circle';
+
         c.innerHTML =
-            '<legend>circle</legend>' +
+            '<legend>stripe</legend>' +
             '<div>' +
             '<label for="size' + uid + '">size</label> ' +
             '<input type="range" id="size' + uid + '" class="size" value="' + this._size + '" max="100"> ' +
@@ -44,21 +35,18 @@ export default class Ball extends BaseShape {
             '<input type="range" id="blur' + uid + '" class="blur" value="' + this.blur + '" max="100"> ' +
             '</div>' +
             '<div>' +
-            '<label for="x' + uid + '">x</label>' +
-            '<input type="range" id="x' + uid + '" class="x" value="' + this._x + '" min="-900" max="900"> ' +
-            '<label for="y' + uid + '">y</label> ' +
-            '<input type="range" id="y' + uid + '"  class="y" value="' + this._y + '" min="-900" max="900"> ' +
+            '<label for="angle' + uid + '">Angle</label>' +
+            '<input type="range" id="angle' + uid + '" class="angle" value="' + this._angle + '" min="-360" max="360"> ' +
             '<label for="color' + uid + '">color</label> ' +
             '<input type="color" class="color" id="color' + uid + '" value="' + this._color + '">' +
-            '<div><button class="remove small" id="color' + uid + '">remove ball</button></div>' +
+            '<div><button class="remove small" id="color' + uid + '">remove stripe</button></div>' +
             '</div>';
 
         this.created(c);
         this.draw();
 
         c.querySelector('.size').addEventListener('input', ({target: {value}}) => this.size = +value);
-        c.querySelector('.x').addEventListener('input', ({target: {value}}) => this.x = +value);
-        c.querySelector('.y').addEventListener('input', ({target: {value}}) => this.y = +value);
+        c.querySelector('.angle').addEventListener('input', ({target: {value}}) => this.angle = +value);
         c.querySelector('.transp').addEventListener('input', ({target: {value}}) => this.alpha = +value);
         c.querySelector('.blur').addEventListener('input', ({target: {value}}) => this.blur = +value);
         c.querySelector('.color').addEventListener('change', ({target: {value}}) => this.color = value);
@@ -69,7 +57,7 @@ export default class Ball extends BaseShape {
     };
 
     draw() {
-        let bg = `radial-gradient(circle at ${this.x}% ${this.y}%, ${this.color + ('0' + this.alpha.toString(16)).slice(-2)} ${this.size}%, transparent ${this.blur + this.size + 0.05}%)`;
+        let bg = `linear-gradient(${this.angle}deg, ${this.color + ('0' + this.alpha.toString(16)).slice(-2)} ${this.size}%, transparent ${this.blur + this.size + 0.05}%)`;
         this.updated(this.uid, bg)
     }
 }

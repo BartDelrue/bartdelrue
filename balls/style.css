@@ -15,7 +15,11 @@
 }
 
 html {
-    height: 100%;
+    min-height: 100vh;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    background-image: var(--bg);
+    background-size: cover;
 }
 
 *, *:before, *:after {
@@ -28,9 +32,6 @@ html {
 }
 
 .page-wrap {
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    background-image: var(--bg);
     display: flex;
     flex-wrap: wrap;
     padding-top: 100px;
@@ -99,6 +100,12 @@ input[type=color] {
 
 label {
     padding-right: 1rem;
+    font-size: .9em;
+}
+
+legend {
+    font-weight: bold;
+    margin-left: -1rem;
 }
 
 .circle {
@@ -113,8 +120,7 @@ label {
     gap: 1rem;
     border: 0;
     border-bottom: 2px solid var(--text-color);
-    padding: 1rem 0 2rem;
-    margin-bottom: 2rem;
+    padding: 1rem 0 2rem 1rem;
 }
 
 .base {
@@ -137,14 +143,14 @@ button {
     border: 2px solid var(--text-color);
     border-radius: 4px;
     color: var(--text-color);
-    padding: 20px 40px;
+    padding: .8em 1.6em;
     transition: all 0.4s ease-in;
     font-variant: all-small-caps;
 }
 
 button.small {
-    margin-top: 2rem;
-    padding: 10px 20px;
+    font-size: .8em;
+    margin-top: 2em;
     display: block;
     margin-left: auto;
 }

@@ -1,10 +1,12 @@
 import Ball from "./ball.mjs";
 import hsl2rgb from "./hsl2rgb.mjs";
 import {calcRatio} from "./contrast.mjs";
+import Stripe from "./stripe.mjs";
 
 (function () {
     const controls = document.querySelector('#controls');
-    const btnControls = document.querySelector('#btnControls')
+    const btnCircle = document.querySelector('#btnCircle');
+    const btnStripe = document.querySelector('#btnStripe');
     const css = document.querySelector('#css');
     const baseColorInput = document.querySelector('#base');
     const bgCollection = {};
@@ -18,12 +20,20 @@ import {calcRatio} from "./contrast.mjs";
 
     baseColorInput.value = color;
     baseColorInput.addEventListener('change', ({target: {value}}) => setBackground(value));
-    btnControls.addEventListener('click', () => {
+    btnCircle.addEventListener('click', () => {
         const uid = ++count;
         new Ball(uid,
             undefined,
             c => controls.appendChild(c),
-            bg => draw(uid, bg),
+            draw,
+            c => controls.removeChild(c));
+    });
+    btnStripe.addEventListener('click', () => {
+        const uid = ++count;
+        new Stripe(uid,
+            undefined,
+            c => controls.appendChild(c),
+            draw,
             c => controls.removeChild(c));
     });
 
@@ -47,8 +57,7 @@ import {calcRatio} from "./contrast.mjs";
     }
 
     for (let i = 3; i--;) {
-        const uid = ++count;
-        const ball = new Ball(uid,
+        new Ball(++count,
             {
                 x: (Math.floor(Math.random() * 200) + 1) - 100,
                 y: (Math.floor(Math.random() * 200) + 1) - 100,
@@ -57,7 +66,20 @@ import {calcRatio} from "./contrast.mjs";
                 blur: 0
             },
             c => controls.appendChild(c),
-            bg => draw(uid, bg),
+            draw,
             c => controls.removeChild(c))
     }
+
+    new Stripe(++count,
+        {
+            x: (Math.floor(Math.random() * 200) + 1) - 100,
+            y: (Math.floor(Math.random() * 200) + 1) - 100,
+            alpha: Math.floor((Math.random() * 30)) + 20,
+            size: (Math.floor(Math.random() * 20) + 41),
+            blur: 0,
+            angle: (Math.floor(Math.random() * 720) + 1) - 360
+        },
+        c => controls.appendChild(c),
+        draw,
+        c => controls.removeChild(c));
 })();
