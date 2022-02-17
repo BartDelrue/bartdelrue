@@ -34,7 +34,7 @@ export default class Ball extends BaseShape {
         c.id = uid;
         c.className = 'circle';
         c.innerHTML =
-            '<legend>circle</legend>' +
+            '<legend>Ball</legend>' +
             '<div>' +
             '<label for="size' + uid + '">size</label> ' +
             '<input type="range" id="size' + uid + '" class="size" value="' + this._size + '" max="100"> ' +
