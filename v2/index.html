@@ -36,11 +36,13 @@
 </head>
 <body>
 <header class="container">
-
-    <hgroup>
-        <h1 class="text-xs-center"><em>Bart</em> Delrue</h1>
-        <p class="">Development & Accessibility</p>
-        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 327 327">
+    <div class="column">
+        <hgroup>
+            <h1 class="text-xs-center"><em>Bart</em> Delrue</h1>
+            <p class="">Development & Accessibility</p>
+        </hgroup>
+        <svg aria-hidden="true" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 327 327">
             <defs>
                 <style>.cls-1, .cls-2 {
                     fill: none;
@@ -64,127 +66,143 @@
             <path d="M229,196.39h32.76V163.63A32.76,32.76,0,0,1,229,196.39Z"/>
             <rect class="cls-2" x="32.44" y="28.98" width="262.12" height="262.12"/>
         </svg>
-    </hgroup>
-    <nav>
-        <ul class="">
-            <li><a href="#personal">About me</a></li>
-            <li><a href="#showcase">Showcase</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    </div>
 
 
-</header>
-<main class="container">
-    <article>
-
+    <figure class="quote">
         <blockquote>"Never do anything by halves if you want to get away with it. Be outrageous. Go the whole
             hog."
         </blockquote>
-        <p>Roald Dahl - Matilda</p>
+        <figcaption>Roald Dahl - Matilda</figcaption>
 
-    </article>
+    </figure>
+</header>
+<nav>
+    <ul class="">
+        <li><a href="#personal">About me</a></li>
+        <li><a href="#showcase">Showcase</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+
     <section id="personal">
-        <div class="row">
-            <div class="col-md-6">
+        <div>
+            <div>
                 <article>
-                    <h2>About me</h2>
-                    <p class="br-subtitle">Basically I'm "that old guy at the front row". </p>
-                    <p>Back in the nineties I made my first websites using notepad at our local library.<br>
-                        After pursuing a teaching career - and consequently working in logistics for four years -
-                        I decided to pick up my old passion for web and app development and enrolled at Howest to study
+                    <hgroup>
+                        <h2>About me</h2>
+                        <p>Writing this, I realized I'm a pendulum. </p>
+                    </hgroup>
+
+                    <p>Back in the nineties I made my first websites using notepad at our local library.
+                        After first pursuing a teaching career, and consequently working in logistics for four years,
+                        I decided to return to my old passion for web and app development and enrolled at Howest to
+                        study
                         New Media and Communication Technology.</p>
-                    <p>I'm now a developer with a high interest in accessibility and with a background in education and
-                        history.</p>
+
+                    <p>I became a full-stack developer with a high interest in accessibility and a background in
+                        education and history.</p>
+
+                    <p>During my four years with the city of Ghent, I had the opportunity to contribute to diverse
+                        projects
+                        that made a measurable and positive impact on our citizens. My proudest contributions are those
+                        to the city of
+                        Ghent Style Guide — forever, <em>my baby</em> — and the platform
+                        for the low emission zone initiative.</p>
+
+                    <p>In 2020, I traded my citizens for college students and started teaching web development at Odisee
+                        University of Applied Sciences.</p>
                 </article>
             </div>
         </div>
-        <div class="row br-flex">
-            <div class="col-md-6 col-lg-5 col-xl-4">
-                <article class="br-specialArticle">
+        <div class="row mb-5">
+
+            <article class="br-specialArticle">
+                <hgroup>
                     <h3>Education</h3>
-                    <p class="br-subtitle">365 ECTS credits</p>
-                    <ul>
-                        <li>Bachelor in secondary education<br>
-                            167 credits<br>
-                            <b>Subject bachelor thesis: e-learning</b></li>
-                        <li>Additional classes at UGent history dept.<br>
-                            15 credits
-                        </li>
-                        <li>Bachelor multimedia and communication technology: NMCT<br>
-                            180 credits - summa cum laude<br>
-                            <b>Subject bachelor thesis: web accessibility @ development</b></li>
-                        <li>Multidisciplinary project<br>
-                            Co-constructing healthy experiences & smart objects, spaces&nbsp;and&nbsp;places<br>
-                            3 credits
-                        </li>
-                        <li>CCNA Routing and Switching: introduction to networks</li>
-                    </ul>
+                    <p>365 ECTS credits</p>
+                </hgroup>
+                <ul>
+                    <li>Bachelor in secondary education<br>
+                        167 credits<br>
+                        <strong>Subject bachelor thesis: e-learning</strong></li>
+                    <li>Additional classes at UGent history dept.<br>
+                        15 credits
+                    </li>
+                    <li>Bachelor multimedia and communication technology: NMCT<br>
+                        180 credits - summa cum laude<br>
+                        <strong>Subject bachelor thesis: web accessibility @ development</strong></li>
+                    <li>Multidisciplinary project<br>
+                        Co-constructing healthy experiences & smart objects, spaces&nbsp;and&nbsp;places<br>
+                        3 credits
+                    </li>
+                    <li>CCNA Routing and Switching: introduction to networks</li>
+                </ul>
+                <hgroup>
                     <h3>Voluntary work & events</h3>
                     <p class="br-subtitle">Experience as team member</p>
-                    <ul>
-                        <li>Head animator kazou youth camps</li>
-                        <li>Head of accredited fraternity Dionysus</li>
-                        <li>Internship: diocesan library and documentation center Ghent</li>
-                        <li>Internship: archives of Ghent University</li>
-                        <li>Project: e-learning module for the process management course at Howest</li>
-                        <li>Project: LoRa geolocation for Proximus</li>
-                        <li>Internship: esign web & graphics agency</li>
-                        <li>Participation: apps for Ghent <br>
-                            (2014, 2016, 2017, 2018 & 2019)
-                        </li>
-                    </ul>
-                </article>
-            </div>
-            <div class="hidden-md-down col-lg-2 col-xl-4 br-flex" aria-hidden="true">
-                <div class="hexagon">
-                    <div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-5 col-xl-4">
-                <article class="br-timeline br-specialArticle">
-                    <h3>Timeline</h3>
-                    <ul>
-                        <li class="br-timeline-first">
-                            <h4>1987 - born</h4>
-                            Ostend, Belgium
-                        </li>
-                        <li aria-hidden="true" class="br-timeline-long"></li>
-                        <li>
-                            <h4>2005 - finished high school</h4>
-                            Onze-lieve-vrouwecollege Oostende
-                        </li>
-                        <li>
-                            <h4>2005-'09 bachelor in secondary education</h4>
-                            History - IT - Roman Catholic religion<br>
-                            Artevelde Hogeschool
-                        </li>
-                        <li><h4>2008-'09 additional history courses</h4>
-                            UGent
-                        </li>
-                        <li><h4>2010 Interim jobs</h4>
-                            Police department Bredene <br>
-                            Tourism office Bredene<br>
-                            Ombudsman Bostoen building company
-                        </li>
-                        <li>
-                            <h4>2010-'14 logistic employee</h4>
-                            DSV solutions
-                        </li>
-                        <li><h4>2014-2017 full time student</h4>
-                            New Media and Communication Technology, Howest<br>
-                            graduated summa cum laude
-                        </li>
-                        <li class="br-timeline-last">
-                            <h4>2017 developer at Digipolis Gent</h4>
-                            Accessibility and frontend development in Vue.js and Angular 2+
-                        </li>
-                    </ul>
-                </article>
+                </hgroup>
+                <ul>
+                    <li>Head animator kazou youth camps</li>
+                    <li>Head of accredited fraternity Dionysus</li>
+                    <li>Internship: diocesan library and documentation center Ghent</li>
+                    <li>Internship: archives of Ghent University</li>
+                    <li>Project: e-learning module for the process management course at Howest</li>
+                    <li>Project: LoRa geolocation for Proximus</li>
+                    <li>Internship: esign web & graphics agency</li>
+                    <li>Participation: apps for Ghent <br>
+                        (2014, 2016, 2017, 2018 & 2019)
+                    </li>
+                </ul>
+            </article>
 
-            </div>
+            <article class="br-timeline br-specialArticle">
+                <h3>Timeline</h3>
+                <ul>
+                    <li class="br-timeline-first">
+                        <h4>1987 - born</h4>
+                        Ostend, Belgium
+                    </li>
+                    <li aria-hidden="true" class="br-timeline-long"></li>
+                    <li>
+                        <h4>2005 - finished high school</h4>
+                        Onze-lieve-vrouwecollege Oostende
+                    </li>
+                    <li>
+                        <h4>2005-'09 bachelor in secondary education</h4>
+                        History - IT - Roman Catholic religion<br>
+                        Artevelde Hogeschool
+                    </li>
+                    <li><h4>2008-'09 additional history courses</h4>
+                        UGent
+                    </li>
+                    <li><h4>2010 Interim jobs</h4>
+                        Police department Bredene <br>
+                        Tourism office Bredene<br>
+                        Ombudsman Bostoen building company
+                    </li>
+                    <li>
+                        <h4>2010-'14 logistic employee</h4>
+                        DSV solutions
+                    </li>
+                    <li><h4>2014-2017 full time student</h4>
+                        New Media and Communication Technology, Howest<br>
+                        graduated summa cum laude
+                    </li>
+                    <li>
+                        <h4>2017-2020 developer at Digipolis Gent</h4>
+                        Accessibility and frontend development in Vue.js and Angular 2+
+                    </li>
+                    <li class="br-timeline-last">
+                        <h4>2020 Lecturer at Odisee Univerity of Applied Sciences</h4>
+                        Full time lecturer in web development.
+                    </li>
+                </ul>
+            </article>
+
+
         </div>
     </section>
     <section id="showcase" class="">
@@ -239,26 +257,61 @@
             </div>
         </div>
     </section>
-    <section id="contact">
-        <div class="row">
-            <div class="col-md-6">
+    <section id="contact" class="mb-5">
                 <article>
-                    <h2>contact</h2>
-                    <p><b>E-mail: </b>delrue.bart@gmail.com<br>
-                        <b>Phone: </b>+32 475 20 27 54<br>
-                        <b>City: </b>Ghent</p>
-                    <p class="social-media">
-                        <a href="https://id.inrupt.com/bart">WebID</a><br>
-                        <a href="https://www.linkedin.com/in/bart-delrue-040672117?trk=hp-identity-name">LinkedIn</a><br>
-                        <a href="https://codepen.io/delrue/">CodePen</a>
-                    </p>
+                    <h2>Contact</h2>
+                    <p>You can find me on <a href="https://www.linkedin.com/in/bart-delrue-040672117?trk=hp-identity-name">LinkedIn</a>,
+                        <a href="https://github.com/BartDelrue">Github (private)</a>, <a href="https://github.com/delrueba">Github (professional)</a>
+                        and <a href="https://codepen.io/delrue/">CodePen</a></p>
+                    <p>If you'd like to reference me, feel free to use my WebId<br><a href="https://id.inrupt.com/bart">https://id.inrupt.com/bart</a></p>
                 </article>
-            </div>
-        </div>
+
     </section>
 </main>
-<footer class="br-shadow-top">
-    <p>&#xa9; Bart Delrue - 2016</p>
+
+<footer >
+    <div class="container">
+        <form>
+            <p>Did you mention my portfolio, make sure to drop a <a href="https://www.w3.org/TR/webmention/">Webmention</a>.</p>
+            <div>
+                <label for="source">Bart, you were mentioned on:</label>
+                <input type="url" id="source" name="source" required>
+                <input type="hidden" id="target" name="target" value="https://bartdelrue.github.io" >
+                <button type="submit">Send!</button>
+            </div>
+
+        </form>
+        <script>
+            (()=>{
+                const form = document.querySelector('form')
+                form.addEventListener('submit', function(e){
+                    e.preventDefault()
+                    const data = new FormData(this)
+                    const urlEncoded = new URLSearchParams()
+                    urlEncoded.append('source', data.get('source'))
+                    urlEncoded.append('target', data.get('target'))
+
+                    fetch('https://bartdelrue-deno-webmen-35.deno.dev/?key=8856d829e81e47138d093fe44356659a4e4c00d1760239cbb556b6d5d27eb6ec', {
+                        method: 'POST',
+                        headers: { 'content-type': 'application/x-www-form-urlencoded' },
+                        body: urlEncoded.toString()
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                this.reset()
+                                this.appendChild(document.createTextNode('Webmention sent!'))
+                                return;
+                            }
+                            this.appendChild(document.createTextNode('Sadly, an error occurred. Don not worry, it was probably my fault!'))
+
+                        })
+                        .catch(error => {})
+                })
+            })()
+        </script>
+        <p>&#xa9; Bart Delrue - 2025</p>
+    </div>
+
 </footer>
 </body>
 </html>
