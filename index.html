@@ -330,9 +330,7 @@
         const observer = new IntersectionObserver(([entry]) => {
             const {target} = entry
             const id = target.getAttribute('id')
-            const {link} = entries[id]
-            link.classList.toggle('active', entry.isIntersecting)
-
+            entries[id].link.classList.toggle('active', entry.isIntersecting)
         }, {threshold: 0.2})
 
         Object.values(entries).forEach(({target}) => observer.observe(target))
