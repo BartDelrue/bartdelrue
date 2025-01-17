@@ -82,6 +82,7 @@
 
     </figure>
 </header>
+
 <nav>
     <ul class="">
         <li><a href="#personal">About me</a></li>
@@ -91,39 +92,33 @@
 </nav>
 
 <main class="container">
+    <section id="personal" class="pb-3">
+        <article>
+            <hgroup>
+                <h2>About me</h2>
+                <p>Writing this, I realized I'm a pendulum. </p>
+            </hgroup>
 
-    <section id="personal">
-        <div>
-            <div>
-                <article>
-                    <hgroup>
-                        <h2>About me</h2>
-                        <p>Writing this, I realized I'm a pendulum. </p>
-                    </hgroup>
+            <p>Back in the nineties I made my first websites using notepad at our local library.
+                After first pursuing a teaching career, and consequently working in logistics for four years,
+                I decided to return to my old passion for web and app development and enrolled at Howest to
+                study
+                New Media and Communication Technology.</p>
 
-                    <p>Back in the nineties I made my first websites using notepad at our local library.
-                        After first pursuing a teaching career, and consequently working in logistics for four years,
-                        I decided to return to my old passion for web and app development and enrolled at Howest to
-                        study
-                        New Media and Communication Technology.</p>
+            <p>I became a full-stack developer with a high interest in accessibility and a background in
+                education and history.</p>
 
-                    <p>I became a full-stack developer with a high interest in accessibility and a background in
-                        education and history.</p>
+            <p>During my four years with the city of Ghent, I had the opportunity to contribute to diverse
+                projects
+                that made a measurable and positive impact on our citizens. My proudest contributions are those
+                to the city of
+                Ghent Style Guide — forever, <em>my baby</em> — and the platform
+                for the low emission zone initiative.</p>
 
-                    <p>During my four years with the city of Ghent, I had the opportunity to contribute to diverse
-                        projects
-                        that made a measurable and positive impact on our citizens. My proudest contributions are those
-                        to the city of
-                        Ghent Style Guide — forever, <em>my baby</em> — and the platform
-                        for the low emission zone initiative.</p>
-
-                    <p>In 2020, I traded my citizens for college students and started teaching web development at Odisee
-                        University of Applied Sciences.</p>
-                </article>
-            </div>
-        </div>
-        <div class="row mb-5">
-
+            <p>In 2020, I traded my citizens for college students and started teaching web development at Odisee
+                University of Applied Sciences.</p>
+        </article>
+        <div class="row">
             <article class="br-specialArticle">
                 <hgroup>
                     <h3>Education</h3>
@@ -162,7 +157,6 @@
                     </li>
                 </ul>
             </article>
-
             <article class="br-timeline br-specialArticle">
                 <h3>Timeline</h3>
                 <ul>
@@ -206,11 +200,9 @@
                     </li>
                 </ul>
             </article>
-
-
         </div>
     </section>
-    <section id="showcase" class="">
+    <section id="showcase" class="pb-3">
         <div class="row">
             <div class="col-sm-12">
                 <article>
@@ -262,34 +254,37 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="mb-5">
-                <article>
-                    <h2>Contact</h2>
-                    <p>You can find me on <a href="https://www.linkedin.com/in/bart-delrue-040672117?trk=hp-identity-name">LinkedIn</a>,
-                        <a href="https://github.com/BartDelrue">Github (private)</a>, <a href="https://github.com/delrueba">Github (professional)</a>
-                        and <a href="https://codepen.io/delrue/">CodePen</a></p>
-                    <p>If you'd like to reference me, feel free to use my WebId<br><a href="https://id.inrupt.com/bart">https://id.inrupt.com/bart</a></p>
-                </article>
+    <section id="contact" class="pb-3">
+        <article>
+            <h2>Contact</h2>
+            <p>You can find me on <a href="https://www.linkedin.com/in/bart-delrue-040672117?trk=hp-identity-name">LinkedIn</a>,
+                <a href="https://github.com/BartDelrue">Github (private)</a>, <a href="https://github.com/delrueba">Github
+                    (professional)</a>
+                and <a href="https://codepen.io/delrue/">CodePen</a></p>
+            <p>If you'd like to reference me, feel free to use my WebId<br><a href="https://id.inrupt.com/bart">https://id.inrupt.com/bart</a>
+            </p>
+        </article>
 
     </section>
 </main>
 
-<footer >
+<footer>
     <div class="container">
         <form>
-            <p>Did you mention my portfolio, make sure to drop a <a href="https://www.w3.org/TR/webmention/">Webmention</a>.</p>
+            <p>Did you mention my portfolio, make sure to drop a <a
+                    href="https://www.w3.org/TR/webmention/">Webmention</a>.</p>
             <div>
                 <label for="source">Bart, you were mentioned on:</label>
                 <input type="url" id="source" name="source" required>
-                <input type="hidden" id="target" name="target" value="https://bartdelrue.github.io" >
+                <input type="hidden" id="target" name="target" value="https://bartdelrue.github.io">
                 <button type="submit">Send!</button>
             </div>
 
         </form>
         <script>
-            (()=>{
+            (() => {
                 const form = document.querySelector('form')
-                form.addEventListener('submit', function(e){
+                form.addEventListener('submit', function (e) {
                     e.preventDefault()
                     const data = new FormData(this)
                     const urlEncoded = new URLSearchParams()
@@ -298,7 +293,7 @@
 
                     fetch('https://bartdelrue-deno-webmen-35.deno.dev/?key=8856d829e81e47138d093fe44356659a4e4c00d1760239cbb556b6d5d27eb6ec', {
                         method: 'POST',
-                        headers: { 'content-type': 'application/x-www-form-urlencoded' },
+                        headers: {'content-type': 'application/x-www-form-urlencoded'},
                         body: urlEncoded.toString()
                     })
                         .then(response => {
@@ -310,7 +305,8 @@
                             this.appendChild(document.createTextNode('Sadly, an error occurred. Don not worry, it was probably my fault!'))
 
                         })
-                        .catch(error => {})
+                        .catch(error => {
+                        })
                 })
             })()
         </script>
@@ -318,5 +314,29 @@
     </div>
 
 </footer>
+<script>
+    (() => {
+        const nav = document.querySelector('nav')
+        const samePageLinks = [...nav.querySelectorAll('a[href^="#"]')]
+        const entries = samePageLinks.reduce((collection, link) => {
+            const id = link.getAttribute('href')
+            const target = document.querySelector(id)
+            if (!target) return;
+
+            collection[target.getAttribute('id')] = {link, target}
+            return collection
+        }, [])
+
+        const observer = new IntersectionObserver(([entry]) => {
+            const {target} = entry
+            const id = target.getAttribute('id')
+            const {link} = entries[id]
+            link.classList.toggle('active', entry.isIntersecting)
+
+        }, {threshold: 0.2})
+
+        Object.values(entries).forEach(({target}) => observer.observe(target))
+    })()
+</script>
 </body>
 </html>
