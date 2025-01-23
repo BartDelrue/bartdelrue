@@ -274,16 +274,17 @@
 <footer>
     <div class="container">
         <form>
-            <p>Did you mention my site, make sure to drop a <a
+            <p> <span class="placeholder"></span><br>Did you mention my site, make sure to drop a <a
                     href="https://www.w3.org/TR/webmention/">Webmention</a>.</p>
             <div>
                 <label for="source">Bart, you were mentioned on:</label>
                 <input type="url" id="source" name="source" required>
-                <input type="hidden" id="target" name="target" value="https://bartdelrue.github.io">
+                <input type="hidden" id="target" name="target" value="https://bartdelrue.github.io/blog">
                 <button type="submit">Send!</button>
             </div>
 
         </form>
+        <p>&#xa9; Bart Delrue - 2025</p>
         <script>
             (() => {
                 const form = document.querySelector('form')
@@ -311,9 +312,17 @@
                         .catch(error => {
                         })
                 })
+
+                const placeholder = document.querySelector('footer .placeholder')
+                fetch('https://bartdelrue-deno-webmen-35.deno.dev/?key=8856d829e81e47138d093fe44356659a4e4c00d1760239cbb556b6d5d27eb6ec')
+                    .then(response => response.json())
+                    .then(data => {
+                        if(!data?.mentions) return;
+                        placeholder.textContent = `This site has been mentioned ${data.mentions} times!`
+                    })
+                    .catch(() => {})
             })()
         </script>
-        <p>&#xa9; Bart Delrue - 2025</p>
     </div>
 
 </footer>

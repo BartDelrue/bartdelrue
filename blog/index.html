@@ -125,11 +125,11 @@
         </p>
 
         <p itemprop="articleBody">
-            I dragged them to Courtray for the <a href="https://wonderkortrijk.be/">Wonder creativity festival</a> and
-            took them to the <a href="https://www.kbr.be/">KBR</a> Brussels to meet the wonderful
-            <a href="https://sven-lieber.org">Sven Lieber</a> for an inspirational talk about linked data. Half of them
+            I invited them to Courtray for the <a href="https://wonderkortrijk.be/">Wonder creativity festival</a>,
+            took them to the <a href="https://www.kbr.be/">KBR</a> in Brussels to meet the wonderful
+            <a href="https://sven-lieber.org">Sven Lieber</a> for an inspirational talk about linked data, and half of them
             <em>still</em> hadn't had enough and voluntarily joined me at
-            <a href="https://www.wintercircus.be">Wintercircus Ghent</a> for a talk about TouchDesigner.
+            <a href="https://www.wintercircus.be">Wintercircus Ghent</a> for a talk about TouchDesigner!
         </p>
 
         <p itemprop="articleBody">
@@ -177,7 +177,7 @@
 <footer>
     <div class="container">
         <form>
-            <p>Did you mention my site, make sure to drop a <a
+            <p> <span class="placeholder"></span><br>Did you mention my site, make sure to drop a <a
                     href="https://www.w3.org/TR/webmention/">Webmention</a>.</p>
             <div>
                 <label for="source">Bart, you were mentioned on:</label>
@@ -187,6 +187,7 @@
             </div>
 
         </form>
+        <p>&#xa9; Bart Delrue - 2025</p>
         <script>
             (() => {
                 const form = document.querySelector('form')
@@ -214,9 +215,17 @@
                         .catch(error => {
                         })
                 })
+
+                const placeholder = document.querySelector('footer .placeholder')
+                fetch(`https://bartdelrue-deno-webmen-35.deno.dev/?key=8856d829e81e47138d093fe44356659a4e4c00d1760239cbb556b6d5d27eb6ec&target=${location.href}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data?.mentions) return;
+                        placeholder.textContent = `This page has been mentioned ${data.mentions} times!`
+                    })
+                    .catch(() => {})
             })()
         </script>
-        <p>&#xa9; Bart Delrue - 2025</p>
     </div>
 
 </footer>
