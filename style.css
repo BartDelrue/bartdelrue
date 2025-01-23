@@ -14,7 +14,8 @@
 }
 
 body {
-    margin: 0
+    margin: 0;
+    overflow-x: hidden;
 }
 
 p {
@@ -276,7 +277,6 @@ nav {
 main.container,
 footer .container {
 
-    overflow: hidden;
     @media (min-width: 60rem ) {
         padding-inline-start: 6rem;
     }
