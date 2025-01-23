@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Musings of Bart Delrue</title>
+        <link>https://bartdelrue.github.io/blog</link>
+        <description>Musings, ramblings and other nonsense by Bart Delrue.</description>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 23 Jan 2025 00:00:00 +0000</lastBuildDate>
+        <image>
+            <url>https://bartdelrue.github.io/apple-touch-icon.png</url>
+            <title>Musings of Bart Delrue</title>
+            <link>https://bartdelrue.github.io/blog</link>
+        </image>
+
+        <item>
+            <title>A Small Shout-Out to My Students</title>
+            <link>https://bartdelrue.github.io/blog#small-shout-out-to-my-students</link>
+            <description><![CDATA[
+        This semester, a group of students in the <strong>web topics advanced</strong> elective explored
+        <em>linked data</em>, <em>federated web</em>, <em>ActivityPub</em>, <em>Webmention</em>, and <em>Solid</em>.
+        They also experimented with tools such as <em>three.js</em>, <em>cables.gl</em>, and <em>TouchDesigner</em>
+        to create interactive media projects.
+        LinkedIn-style boasting isn’t my strong suit, but I’m very proud of the work they’ve done.
+        I dragged them to Courtray for the <a href="https://wonderkortrijk.be/">Wonder creativity festival</a>,
+        to <a href="https://www.kbr.be/">KBR</a> Brussels to meet Sven Lieber, and to the Wintercircus Ghent for
+        a talk about TouchDesigner.
+      ]]></description>
+            <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
+            <guid>https://bartdelrue.github.io/blog#small-shout-out-to-my-students</guid>
+        </item>
+
+        <item>
+            <title>More to Come</title>
+            <link>https://bartdelrue.github.io/blog#more-to-come</link>
+            <description><![CDATA[
+        As is tradition in January, I’ve curated a small list of good intentions for 2025.
+        The basic fit will probably be saturated with other well-intentioned people... so I’ll avoid getting in their way.
+        What’s left is a very real desire to share at least one observation with the world through this blog.
+        And yes, I antedated this post so the one above wouldn’t look lonely. Please don’t tell anyone. 😉
+      ]]></description>
+            <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+            <guid>https://bartdelrue.github.io/blog#more-to-come</guid>
+        </item>
+    </channel>
+</rss>
