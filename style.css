@@ -354,6 +354,11 @@ main li {
 
     }
 
+    /*remove after fix*/
+    &::before, &::after {
+        content: none;
+    }
+
     strong {
         margin-block-start: .5em;
         display: inline-block;
