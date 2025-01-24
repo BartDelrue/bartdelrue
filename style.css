@@ -15,7 +15,6 @@
 
 body {
     margin: 0;
-    overflow-x: hidden;
 }
 
 p {
@@ -274,6 +273,9 @@ nav {
     }
 }
 
+.container-wide {
+    overflow-x: hidden;
+}
 main.container,
 footer .container {
 
@@ -352,11 +354,6 @@ main li {
         margin-top: 40px;
         transform: rotate(-10deg);
 
-    }
-
-    /*remove after fix*/
-    &::before, &::after {
-        content: none;
     }
 
     strong {
