@@ -13,6 +13,30 @@
         </image>
 
         <item>
+          <title>Presentation: RSS</title>
+          <link>https://bartdelrue.github.io/talks/RSS/</link>
+          <description><![CDATA[
+              <p>I gave a talk on RSS for the web topics course at Odisee: 
+              <a href="https://bartdelrue.github.io/talks/RSS/">Presentation here</a>.</p>
+              <iframe src="https://bartdelrue.github.io/talks/RSS/" title="RSS" width="800" height="500"></iframe>
+    ]]></description>
+          <pubDate>Tue, 12 Feb 2025 00:00:00 +0000</pubDate>
+          <guid>https://bartdelrue.github.io/talks/RSS/</guid>
+        </item>
+    
+        <item>
+          <title>Presentation: Webmention</title>
+          <link>https://bartdelrue.github.io/talks/webmention/</link>
+          <description><![CDATA[
+              <p>I gave a talk on the webmention specification for the web topics course at Odisee: 
+              <a href="https://bartdelrue.github.io/talks/webmention/">Presentation here</a>.</p>
+              <iframe src="https://bartdelrue.github.io/talks/webmention/" title="webmention" width="800" height="500"></iframe>
+    ]]></description>
+          <pubDate>Tue, 12 Feb 2025 00:00:00 +0000</pubDate>
+          <guid>https://bartdelrue.github.io/talks/webmention/</guid>
+        </item>
+
+        <item>
             <title>A Small Shout-Out to My Students</title>
             <link>https://bartdelrue.github.io/blog#small-shout-out-to-my-students</link>
             <description><![CDATA[
